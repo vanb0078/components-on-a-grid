@@ -1,5 +1,7 @@
 html {
   box-sizing: border-box;
+  line-height: 1.5;
+  font-family: Georgia, serif;
 }
 
 *,
@@ -13,30 +15,21 @@ img {
 }
 
 body {
+  background-color: #f2f1ed;
   margin: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
   grid-template-areas:
-  "header header"
-  "figure1 figure2"
-}
-
-h1 {
-  margin: 0;
-  z-index: 1;
-  grid-column: 1;
-}
-
-.logo {
-  display: grid;
-  grid-template-columns:
+    "header header"
+    "figure1 figure2";
 }
 
 header {
+  display: contents;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
   grid-area: header;
 }
 
@@ -45,10 +38,46 @@ header img {
   grid-row: 1/-1;
 }
 
-figure:first-child {
+.logo {
+  width: 14rem;
+  z-index: 1;
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+
+  padding: 1rem;
+}
+
+ul {
+  font-family: "Patua One", sans-serif;
+  color: #fff;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+nav {
+  grid-column: 2/-1;
+  grid-row: 1/-1;
+  display: flex;
+}
+
+main {
+  display: contents;
+}
+
+figure:nth-child(1) {
   grid-area: figure1;
 }
 
-figure:last-child {
+figure:nth-child(2) {
   grid-area: figure2;
+}
+
+h2 {
+  color: #30658d;
+  font-family: "Patua One", sans-serif;
+}
+
+p {
+  color: #000;
 }
