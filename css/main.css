@@ -12,7 +12,43 @@ img {
   width: 100%;
 }
 
+body {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+  "header header"
+  "figure1 figure2"
+}
+
+h1 {
+  margin: 0;
+  z-index: 1;
+  grid-column: 1;
+}
+
+.logo {
+  display: grid;
+  grid-template-columns:
+}
+
 header {
-  /* Remove the <header> box and allow us to directly apply header’s children to the grid. */
-  display: contents;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-area: header;
+}
+
+header img {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+}
+
+figure:first-child {
+  grid-area: figure1;
+}
+
+figure:last-child {
+  grid-area: figure2;
 }
