@@ -19,7 +19,7 @@ body {
   margin: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr .5fr;
   grid-template-areas:
     "header header"
     "figure1 figure2";
@@ -29,55 +29,80 @@ header {
   display: contents;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr .5fr;
   grid-area: header;
 }
 
 header img {
+  padding: 1rem;
+  padding-bottom: 0;
   grid-column: 1/-1;
   grid-row: 1/-1;
 }
 
 .logo {
-  width: 14rem;
+  width: 16rem;
   z-index: 1;
   grid-column: 1;
-  grid-row: 1;
+  grid-row: 1/-1;
   align-self: end;
-
-  padding: 1rem;
-}
-
-ul {
-  font-family: "Patua One", sans-serif;
-  color: #fff;
-  text-decoration: none;
-  list-style-type: none;
+  margin: 1rem;
 }
 
 nav {
+  margin: 1rem;
+  margin-right: 4rem;
   grid-column: 2/-1;
   grid-row: 1/-1;
+}
+
+nav ul {
+  list-style-type: none;
   display: flex;
 }
 
+nav a {
+  font-family: "Patua One", sans-serif;
+  color: #fff;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
 main {
+  padding: 0;
+  margin: 0;
   display: contents;
 }
 
+figure {
+  margin: 1rem;
+  margin-bottom: 0;
+}
+
 figure:nth-child(1) {
+  margin-right: .5rem;
   grid-area: figure1;
 }
 
 figure:nth-child(2) {
+  margin-left: .5rem;
   grid-area: figure2;
+}
+
+figcaption {
+  margin: 0;
+  gap: 1rem;
 }
 
 h2 {
   color: #30658d;
   font-family: "Patua One", sans-serif;
+  margin-bottom: 0;
+  margin-top: 1rem;
 }
 
 p {
   color: #000;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
